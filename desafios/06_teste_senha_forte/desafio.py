@@ -1,16 +1,11 @@
+import re
+
 def senha_forte(senha: str) -> bool:
-
-    # Padrão de Mercado com REGEX
-
-    padrao = r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{9,}$"
-
-    if re.match(padrao, senha):
-        return True
-    
-    return False
+    padrao = r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$"
+    return bool(re.match(padrao, senha))
 
     # Jeito simples
-    
+
     # return (
     # len(senha) > 8 and
     # any(letra.isupper() for letra in senha) and
