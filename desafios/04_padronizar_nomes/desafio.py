@@ -1,6 +1,12 @@
 def padronizar_nomes(nomes: list[str]) -> list[str]:
-    """
-    Recebe uma lista de nomes "sujos" e retorna os nomes formatados
-    em Title Case, sem espaços nas extremidades.
-    """
-    raise NotImplementedError
+
+    nomes_padronizados = []
+
+    for nome in nomes:
+
+        nome_limpo = nome.strip().title()
+
+        nomes_padronizados.append(nome_limpo)
+
+    return nomes_padronizados
+    # OU return [nome.strip().title() for nome in nomes]
