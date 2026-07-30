@@ -1,8 +1,10 @@
-def filtrar_usuarios_ativos(usuarios: list[dict]) -> list[str]:
-    """
-    Recebe uma lista de dicionários no formato {"nome": str, "ativo": bool}.
+def filtrar_usuarios_ativos(usuarios: list) -> list:
+    usuarios_ativos = []
+    
+    for usuario in usuarios:
+        if usuario["ativo"]:
+            usuarios_ativos.append(usuario["nome"])
+    
+    return usuarios_ativos
 
-    Retorna apenas os nomes dos usuários com ativo=True.
-    Se nenhum estiver ativo, retorna lista vazia.
-    """
-    raise NotImplementedError
+    # OU return [usuario["nome"] for usuario in usuarios if usuario["ativo"]]
