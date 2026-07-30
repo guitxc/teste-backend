@@ -1,12 +1,16 @@
+import re
+
 def email_valido(email: str) -> bool:
-    """
-    Verifica se um e-mail "parece" correto, sem regex.
+    # Padrão de Mercado com REGEX
+    molde = r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
+    
+    if re.match(molde, email):
+        return True
+    else:
+        return False
 
-    Regras:
-        - Não pode conter espaços
-        - Deve ter exatamente um caractere '@'
-        - Deve ter pelo menos um ponto '.'
-
-    Retorna True se válido, False caso contrário.
-    """
-    raise NotImplementedError
+    # Jeito mais simples
+    
+    # if "@" in email and "." in email:
+    #     return True
+    # return False
