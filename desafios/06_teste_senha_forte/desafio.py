@@ -1,13 +1,19 @@
 def senha_forte(senha: str) -> bool:
-    """
-    Verifica se uma senha é considerada forte.
 
-    Regras:
-        - Pelo menos 8 caracteres
-        - Pelo menos uma letra maiúscula
-        - Pelo menos uma letra minúscula
-        - Pelo menos um número
+    # Padrão de Mercado com REGEX
 
-    Retorna True se forte, False caso contrário.
-    """
-    raise NotImplementedError
+    padrao = r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{9,}$"
+
+    if re.match(padrao, senha):
+        return True
+    
+    return False
+
+    # Jeito simples
+    
+    # return (
+    # len(senha) > 8 and
+    # any(letra.isupper() for letra in senha) and
+    # any(letra.islower() for letra in senha) and
+    # any(letra.isdigit() for letra in senha)
+    # )
