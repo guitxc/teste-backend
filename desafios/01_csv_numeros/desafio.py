@@ -5,4 +5,4 @@ def limpar_csv_numeros(linha: str) -> str:
 
     O delimitador ';' NÃO deve ser alterado.
     """
-    return linha.replace(",", ".")
+    raise NotImplementedError
