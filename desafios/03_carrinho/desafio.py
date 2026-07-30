@@ -8,6 +8,4 @@ def calcular_total_carrinho(carrinho: list[dict]) -> float:
         total += subtotal
 
     return total
-
-# --- TESTE MANUAL ---
-# Pode apagar essa parte depois de ver o resultado!
+    # OU return sum(item["preco"] * item["quantidade"] for item in carrinho)
